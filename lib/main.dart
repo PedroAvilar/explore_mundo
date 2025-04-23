@@ -48,6 +48,12 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
+            Image.asset(
+              'assets/imagens_lugares/oeschinen-lake.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection,
             buttonSection,
             textSection,
