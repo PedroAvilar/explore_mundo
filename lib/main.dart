@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/avaliacao_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
             titleSection,
             buttonSection,
             textSection,
+            ...avaliacoes,
           ],
         )
       ),
@@ -112,4 +114,21 @@ class MyApp extends StatelessWidget {
       softWrap: true,
     ),
   );
+
+  final List<Widget> avaliacoes = [
+    const AvaliacaoWidget(
+      nomeCliente: 'Pedro Avilar',
+      estrelas: 5,
+      comentario: 'Paisagens de tirar o fôlego. Experiência inesquecível.',
+    ),
+    const AvaliacaoWidget(
+      nomeCliente: 'Claudio Pontes', 
+      estrelas: 4,
+      comentario: 'Excelente para relaxar e curtir a família, não recomendo no inverno.'
+    ),
+    const AvaliacaoWidget(
+      nomeCliente: 'Jane Anne',
+      estrelas: 3,
+      comentario: 'Muito bonito, mas o acesso é um pouco difícil.')
+  ];
 }
