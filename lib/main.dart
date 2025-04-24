@@ -1,6 +1,8 @@
+import 'package:explore_mundo/model/avaliacao.dart';
 import 'package:flutter/material.dart';
 import 'widgets/avaliacao_widget.dart';
 import 'widgets/formulario_avaliacao.dart';
+import 'utils/media_avaliacoes.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,19 +14,19 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final List<Widget> _avaliacoes = [
-    const AvaliacaoWidget(
-      nomeCliente: 'Pedro Avilar',
+  final List<Avaliacao> _avaliacoes = [
+    Avaliacao(
+      nome: 'Pedro Avilar',
       estrelas: 5,
       comentario: 'Paisagens de tirar o fôlego. Experiência inesquecível.',
     ),
-    const AvaliacaoWidget(
-      nomeCliente: 'Claudio Pontes', 
+    Avaliacao(
+      nome: 'Claudio Pontes', 
       estrelas: 4,
       comentario: 'Excelente para relaxar e curtir a família, não recomendo no inverno.'
     ),
-    const AvaliacaoWidget(
-      nomeCliente: 'Jane Anne',
+    Avaliacao(
+      nome: 'Jane Anne',
       estrelas: 3,
       comentario: 'Muito bonito, mas o acesso é um pouco difícil.'
     ),
@@ -33,8 +35,8 @@ class _MyAppState extends State<MyApp> {
   void _adicionarAvaliacao(String nome, int estrelas, String comentario) {
       setState(() {
         _avaliacoes.add(
-          AvaliacaoWidget(
-            nomeCliente: nome,
+          Avaliacao(
+            nome: nome,
             estrelas: estrelas,
             comentario: comentario
           ),
@@ -63,40 +65,42 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  final Widget titleSection = Container(
-    padding: const EdgeInsets.all(32),
-    child: Row(
-      children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: const Text(
-                  'Oeschinen Lake Campground',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+  Widget _buildTitleSection (double media) {
+    return Container(
+      padding: const EdgeInsets.all(32),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: const Text(
+                    'Oeschinen Lake Campground',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              Text(
-                'Kandersteg, Switzerland',
-                style: TextStyle(
-                  color: Colors.grey[500],
+                Text(
+                  'Kandersteg, Switzerland',
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        Icon(
-          Icons.star,
-          color: Colors.red[500],
-        ),
-        const Text('41'),
-      ],
-    ),
-  );
+          Icon(
+            Icons.star,
+            color: Colors.red[500],
+          ),
+          Text(media.toStringAsFixed(1)),
+        ],
+      ),
+    );
+  }
 
   final Widget textSection = Container(
     padding: const EdgeInsets.all(32),
@@ -117,6 +121,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
 
     final Color color = Theme.of(context).primaryColor;
+    final double mediaEstrelas = calcularMediaAvaliacoes(_avaliacoes);
 
     final Widget buttonSection = Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -141,11 +146,15 @@ class _MyAppState extends State<MyApp> {
               height: 240,
               fit: BoxFit.cover,
             ),
-            titleSection,
+            _buildTitleSection(mediaEstrelas),
             buttonSection,
             textSection,
             FormularioAvaliacao(onEnviar: _adicionarAvaliacao),
-            ..._avaliacoes,
+            ..._avaliacoes.map((a) => AvaliacaoWidget(
+              nomeCliente: a.nome,
+              estrelas: a.estrelas,
+              comentario: a.comentario
+            )),
           ],
         ),
       ),
