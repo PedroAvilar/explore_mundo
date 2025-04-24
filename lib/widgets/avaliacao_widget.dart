@@ -12,16 +12,14 @@ class AvaliacaoWidget extends StatelessWidget {
     required this.comentario,
   });
 
-  Widget _buildEstrelas(int count) {
-    return Row(
-      children: List.generate(5, (index) {
-        if (index < count) {
-          return const Icon(Icons.star_border, color: Colors.amber, size: 16);
-        } else {
-          return const Icon(Icons.star_border, color: Colors.grey, size: 16);
-        }
-      }),
-    );
+  List<Widget> _buildEstrelas(int estrelas) {
+    return List.generate(5, (index) {
+      if (index < estrelas) {
+        return const Icon(Icons.star, color: Colors.amber, size: 18);
+      } else {
+        return const Icon(Icons.star, color: Colors.grey, size: 18);
+      }
+    });
   }
 
   @override
@@ -38,8 +36,9 @@ class AvaliacaoWidget extends StatelessWidget {
               nomeCliente,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-            const SizedBox(height: 4),
-            _buildEstrelas(estrelas),
+            Row(
+              children: _buildEstrelas(estrelas),
+            ),
             const SizedBox(height: 8),
             Text(comentario),
           ],
