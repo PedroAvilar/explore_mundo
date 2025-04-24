@@ -12,35 +12,40 @@ class AvaliacaoWidget extends StatelessWidget {
     required this.comentario,
   });
 
-  List<Widget> _buildEstrelas(int estrelas) {
-    return List.generate(5, (index) {
-      if (index < estrelas) {
-        return const Icon(Icons.star, color: Colors.amber, size: 18);
-      } else {
-        return const Icon(Icons.star, color: Colors.grey, size: 18);
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      elevation: 2,
+      elevation: 3,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              nomeCliente,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-            ),
             Row(
-              children: _buildEstrelas(estrelas),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  nomeCliente,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                Row(
+                  children: List.generate(
+                    estrelas,
+                    (index) => const Icon(Icons.star, color: Colors.amber, size: 20),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 8),
-            Text(comentario),
+            Text(
+              comentario,
+              style: const TextStyle(fontSize: 14),
+            ),
           ],
         ),
       ),
