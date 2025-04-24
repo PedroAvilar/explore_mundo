@@ -1,3 +1,4 @@
+//Modelo de avaliação
 class Avaliacao {
   final String nome;
   final int estrelas;

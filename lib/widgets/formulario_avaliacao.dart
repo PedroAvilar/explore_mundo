@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+//Widget com formulário para envio de avaliação
 class FormularioAvaliacao extends StatefulWidget {
+
+  //Função callbak para enviar os dados preenchidos no formulário
   final void Function(String nome, int estrelas, String comentario) onEnviar;
 
   const FormularioAvaliacao({super.key, required this.onEnviar});
@@ -9,12 +12,14 @@ class FormularioAvaliacao extends StatefulWidget {
   State<FormularioAvaliacao> createState() => _FormularioAvaliacaoState();
 }
 
+//Estado do widget que lida com campos de texto, seleção de estrelas e envio
 class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
   final _formKey = GlobalKey<FormState>();
   final _nomeController = TextEditingController();
   final _comentarioController = TextEditingController();
   int _estrelasSelecionadas = 5;
 
+  //Método chamado ao preesionar o botão de envio
   void _submeterFormulario() {
     if (_formKey.currentState!.validate()) {
       widget.onEnviar(
@@ -26,6 +31,7 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
       _comentarioController.clear();
       setState(() => _estrelasSelecionadas = 5);
 
+      //Exibe mensagem de sucesso ao enviar
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text(
@@ -54,16 +60,19 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
           key: _formKey,
           child: Column(
             children: [
+              //Título do formulário
               const Text(
                 'Deixe sua avaliação',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              //Campo de entrada do comentário
               TextFormField(
                 controller: _comentarioController,
                 decoration: const InputDecoration(labelText: 'Comentário'),
                 validator: (value) => value!.isEmpty ? 'Digite um comentário' : null,
               ),
               const SizedBox(height: 12),
+              //Linha de botões de estrelas
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(5, (index) {
@@ -73,6 +82,7 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
                       selected ? Icons.star : Icons.star_border,
                       color: selected ? Colors.amber : Colors.grey,
                     ),
+                    //Atualiza o número de estrelas selecionadas
                     onPressed: () {
                       setState(() => _estrelasSelecionadas = index + 1);
                     },
@@ -80,6 +90,7 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
                 }),
               ),
               const SizedBox(height: 12),
+              //Botão de envio do formulário
               ElevatedButton(
                 onPressed: _submeterFormulario,
                 child: const Text('Enviar avaliação'))

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+//Widget que representa uma avaliação de cliente
 class AvaliacaoWidget extends StatelessWidget {
   final String nomeCliente;
   final int estrelas;
   final String comentario;
 
+  //Construtor da class
   const AvaliacaoWidget({
     super.key,
     required this.nomeCliente,
@@ -26,6 +28,7 @@ class AvaliacaoWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                //Nome do cliente na avaliação
                 Text(
                   nomeCliente,
                   style: const TextStyle(
@@ -33,6 +36,7 @@ class AvaliacaoWidget extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
+                //Ícones de estrelas amarelas
                 Row(
                   children: List.generate(
                     estrelas,
@@ -42,6 +46,7 @@ class AvaliacaoWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 8),
+            //Texto do comentário
             Text(
               comentario,
               style: const TextStyle(fontSize: 14),

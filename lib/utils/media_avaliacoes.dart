@@ -1,3 +1,4 @@
+//Função para cálculo de média das notas das avaliações
 import '../model/avaliacao.dart';
 
 double calcularMediaAvaliacoes(List<Avaliacao> avaliacoes) {
