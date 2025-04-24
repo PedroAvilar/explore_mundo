@@ -25,6 +25,21 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
       _nomeController.clear();
       _comentarioController.clear();
       setState(() => _estrelasSelecionadas = 5);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Avaliação enviada com sucesso!',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black
+            ),
+          ),
+          duration: Duration(seconds: 5),
+          backgroundColor: Colors.lightGreen,
+        ),
+      );
     }
   }
 
