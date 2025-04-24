@@ -53,6 +53,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/imagens_lugares/oeschinen-lake.jpg
+    - assets/imagens_lugares/lauterbrunnen.jpg
+    - assets/imagens_lugares/zermatt.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
