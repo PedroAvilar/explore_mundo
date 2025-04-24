@@ -65,6 +65,12 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
                 'Deixe sua avaliação',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+              //Campo de entrada do nome
+              TextFormField(
+                controller: _nomeController,
+                decoration: const InputDecoration(labelText: 'Seu nome'),
+                validator: (value) => value!.isEmpty ? 'Digite seu nome' : null,
+              ),
               //Campo de entrada do comentário
               TextFormField(
                 controller: _comentarioController,
