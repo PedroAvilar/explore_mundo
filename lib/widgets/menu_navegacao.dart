@@ -34,8 +34,8 @@ class MenuNavegacao extends StatelessWidget {
             leading: const Icon(Icons.home),
             title: const Text('Home'),
             onTap: () {
-              aoSelecionar?.call('/');
               Navigator.pop(context);
+              aoSelecionar?.call('/');
             },
           ),
           //Item do menu: Destinos
@@ -43,8 +43,8 @@ class MenuNavegacao extends StatelessWidget {
             leading: const Icon(Icons.map),
             title: const Text('Destinos'),
             onTap: () {
-              aoSelecionar?.call('/destinos');
               Navigator.pop(context);
+              aoSelecionar?.call('/destinos_page');
             },
           ),
           //Item do menu: Pacotes de viagem
@@ -52,8 +52,8 @@ class MenuNavegacao extends StatelessWidget {
             leading: const Icon(Icons.card_travel),
             title: const Text('Pacotes de viagem'),
             onTap: () {
-              aoSelecionar?.call('/pacotes');
               Navigator.pop(context);
+              aoSelecionar?.call('/pacotes');
             },
           ),
           //Item do menu: Sobre nós
@@ -61,8 +61,8 @@ class MenuNavegacao extends StatelessWidget {
             leading: const Icon(Icons.info),
             title: const Text('Sobre nós'),
             onTap: () {
-              aoSelecionar?.call('/sobre');
               Navigator.pop(context);
+              aoSelecionar?.call('/sobre');
             },
           ),
           //Item do menu: Contato
@@ -70,8 +70,8 @@ class MenuNavegacao extends StatelessWidget {
             leading: const Icon(Icons.contact_mail),
             title: const Text('Contato'),
             onTap: () {
-              aoSelecionar?.call('/contato');
               Navigator.pop(context);
+              aoSelecionar?.call('/contato');
             },
           ),
         ],

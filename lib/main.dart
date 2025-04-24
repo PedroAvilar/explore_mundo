@@ -1,3 +1,4 @@
+import 'package:explore_mundo/pages/destinos_page.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      routes: {
+        '/': (context) => const HomePage(),
+        '/destinos_page': (context) => const DestinosPage(),
+      },
     );
   }
 }

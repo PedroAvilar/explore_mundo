@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       //Menu lateral de navegação
       drawer: MenuNavegacao(
         aoSelecionar: (rota) {
-          if (rota != '/') {
+          if (ModalRoute.of(context)?.settings.name != rota) {
             Navigator.pushNamed(context, rota);
           }
         },
