@@ -3,6 +3,7 @@ import 'package:explore_mundo/utils/media_avaliacoes.dart';
 import 'package:explore_mundo/widgets/estrela_media.dart';
 import 'package:explore_mundo/widgets/tela_base.dart';
 import 'package:flutter/material.dart';
+import 'package:explore_mundo/pages/pacote_detalhes_page.dart';
 
 //Tela que lista os pacotes
 class PacotesPage extends StatelessWidget {
