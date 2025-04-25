@@ -1,4 +1,5 @@
 import 'package:explore_mundo/model/dados_destinos.dart';
+import 'package:explore_mundo/pages/destino_detalhes_page.dart';
 import 'package:explore_mundo/utils/media_avaliacoes.dart';
 import 'package:explore_mundo/widgets/tela_base.dart';
 import 'package:flutter/material.dart';
@@ -25,36 +26,52 @@ class DestinosPage extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
             elevation: 4,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //Imagem do destino
-                ClipRRect(
-                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-                  child: Image.asset(
-                    destino.imagem,
-                    width: double.infinity,
-                    height: 300,
-                    fit: BoxFit.cover,
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DestinoDetalhesPage(destino: destino),
                   ),
-                ),
-                //Espaço com nome e média das estrelas do destino
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      //Nome do destino
-                      Text(
-                        destino.nome,
-                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                      ),
-                      //Widget que exibe a média das estrelas
-                      EstrelaMedia(media: mediaEstrelas),
-                    ],
+                );
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //Imagem do destino
+                  ClipRRect(
+                    borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                    child: Image.asset(
+                      destino.imagem,
+                      width: double.infinity,
+                      height: 300,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                )
-              ],
+                  // Nome do destino e média das estrelas abaixo da imagem
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Nome do destino alinhado à esquerda
+                        Expanded(
+                          child: Text(
+                            destino.nome,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        // Média das avaliações alinhada à direita
+                        EstrelaMedia(media: mediaEstrelas),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },
