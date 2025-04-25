@@ -1,5 +1,6 @@
 import 'package:explore_mundo/pages/destinos_page.dart';
 import 'package:explore_mundo/pages/pacotes_page.dart';
+import 'package:explore_mundo/pages/sobre_page.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/destinos_page': (context) => const DestinosPage(),
         '/pacotes_page': (context) => const PacotesPage(),
+        '/sobre_page': (context) => const SobrePage(),
       },
     );
   }

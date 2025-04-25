@@ -62,7 +62,7 @@ class MenuNavegacao extends StatelessWidget {
             title: const Text('Sobre nós'),
             onTap: () {
               Navigator.pop(context);
-              aoSelecionar?.call('/sobre');
+              aoSelecionar?.call('/sobre_page');
             },
           ),
           //Item do menu: Contato
