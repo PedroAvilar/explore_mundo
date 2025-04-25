@@ -53,7 +53,7 @@ class MenuNavegacao extends StatelessWidget {
             title: const Text('Pacotes de viagem'),
             onTap: () {
               Navigator.pop(context);
-              aoSelecionar?.call('/pacotes');
+              aoSelecionar?.call('/pacotes_page');
             },
           ),
           //Item do menu: Sobre nós
