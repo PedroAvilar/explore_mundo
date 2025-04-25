@@ -86,9 +86,30 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                buildButtonColumn(Colors.blue, Icons.call, 'LIGAR', 'LIGAR', context, telefone: widget.destino.telefone),
-                buildButtonColumn(Colors.blue, Icons.near_me, 'ROTA', 'ROTA', context, endereco: widget.destino.endereco),
-                buildButtonColumn(Colors.blue, Icons.share, 'COMPARTILHAR', 'COMPARTILHAR'),
+                buildButtonColumn(
+                  Colors.blue,
+                  Icons.call,
+                  'LIGAR',
+                  'LIGAR',
+                  context,
+                  telefone: widget.destino.telefone),
+                buildButtonColumn(
+                  Colors.blue,
+                  Icons.near_me,
+                  'ROTA',
+                  'ROTA',
+                  context,
+                  endereco: widget.destino.endereco),
+                buildButtonColumn(
+                  Colors.blue,
+                  Icons.share,
+                  'COMPARTILHAR',
+                  'COMPARTILHAR',
+                  context,
+                  nome: widget.destino.nome,
+                  telefone: widget.destino.telefone,
+                  endereco: widget.destino.endereco,
+                  mediaEstrelas: mediaEstrelas),
               ],
             ),
           ),

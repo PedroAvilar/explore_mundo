@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //Botões para ligar, rota e compartilhar nos destinos
@@ -9,8 +11,10 @@ Widget buildButtonColumn(
   String label,
   String action,
   BuildContext context, {
+    String? nome,
     String? telefone,
     String? endereco,
+    double? mediaEstrelas,
   }) {
   return Column(
     mainAxisSize: MainAxisSize.min,
@@ -71,8 +75,28 @@ Widget buildButtonColumn(
               ));
             }
 
+          //Ação de compartilhar
           } else if (action == 'COMPARTILHAR') {
-            print("Compartilhar destino");
+            final info = '''
+Confira este destino incrível no Explore Mundo! 🌍
+
+📍 Destino: ${ nome ?? "Nome não informado"}
+📌 Endereço: ${endereco ?? "Não informado"}
+📞 Telefone: ${telefone ?? "Não informado"}
+⭐ Avaliação média: ${mediaEstrelas?.toStringAsFixed(1) ?? "Sem avaliações"}
+
+Acesse o app e explore mais!
+            ''';
+            if (kIsWeb) {
+              //No navegador
+              await Clipboard.setData(ClipboardData(text: info));
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Informações copiadas para a área de transferência.')),
+              );
+            } else {
+              //Em dispositivos móveis
+              await Share.share(info);
+            }
           }
         },
       ),
