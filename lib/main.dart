@@ -1,3 +1,4 @@
+import 'package:explore_mundo/pages/contato_page.dart';
 import 'package:explore_mundo/pages/destinos_page.dart';
 import 'package:explore_mundo/pages/pacotes_page.dart';
 import 'package:explore_mundo/pages/sobre_page.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         '/destinos_page': (context) => const DestinosPage(),
         '/pacotes_page': (context) => const PacotesPage(),
         '/sobre_page': (context) => const SobrePage(),
+        '/contato_page': (context) => const ContatoPage(),
       },
     );
   }

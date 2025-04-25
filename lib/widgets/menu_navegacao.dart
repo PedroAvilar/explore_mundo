@@ -71,7 +71,7 @@ class MenuNavegacao extends StatelessWidget {
             title: const Text('Contato'),
             onTap: () {
               Navigator.pop(context);
-              aoSelecionar?.call('/contato');
+              aoSelecionar?.call('/contato_page');
             },
           ),
         ],
