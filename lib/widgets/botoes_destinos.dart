@@ -1,3 +1,4 @@
+import 'package:explore_mundo/utils/abrir_mapa.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -61,19 +62,8 @@ Widget buildButtonColumn(
               );
               return;
             }
-            //Codifica o endereço para ser usado na URL
-            final encodedEndereco = Uri.encodeComponent(endereco);
-            //Cria a URL de pesquisa do Google Maps com o edereço
-            final Uri uri = Uri.parse('https://www.google.com/maps/search/?api=1&query=$encodedEndereco');
-            //Vertifica se é possível abrir a URL
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri, mode: LaunchMode.externalApplication);
-            } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Não foi possível abrir o mapa')
-              ));
-            }
+            //Função auxiliar
+            await abrirMapa(endereco, context);
 
           //Ação de compartilhar
           } else if (action == 'COMPARTILHAR') {
