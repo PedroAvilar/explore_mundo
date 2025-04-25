@@ -87,7 +87,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 buildButtonColumn(Colors.blue, Icons.call, 'LIGAR', 'LIGAR', context, telefone: widget.destino.telefone),
-                buildButtonColumn(Colors.blue, Icons.near_me, 'ROTA', 'ROTA'),
+                buildButtonColumn(Colors.blue, Icons.near_me, 'ROTA', 'ROTA', context, endereco: widget.destino.endereco),
                 buildButtonColumn(Colors.blue, Icons.share, 'COMPARTILHAR', 'COMPARTILHAR'),
               ],
             ),
