@@ -48,13 +48,13 @@ class DestinosPage extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  // Nome do destino e média das estrelas abaixo da imagem
+                  //Nome do destino e média das estrelas abaixo da imagem
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Nome do destino alinhado à esquerda
+                        //Nome do destino alinhado à esquerda
                         Expanded(
                           child: Text(
                             destino.nome,
@@ -65,7 +65,7 @@ class DestinosPage extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        // Média das avaliações alinhada à direita
+                        //Média das avaliações
                         EstrelaMedia(media: mediaEstrelas),
                       ],
                     ),
