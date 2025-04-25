@@ -8,7 +8,9 @@ import 'package:explore_mundo/widgets/tela_base.dart';
 import 'package:flutter/material.dart';
 import 'package:explore_mundo/widgets/botoes_destinos.dart';
 
+//Tela que exibe os detalhes completos de um destino
 class DestinoDetalhesPage extends StatefulWidget {
+  //Destino que será exibido
   final  Destino destino;
 
   const DestinoDetalhesPage({super.key, required this.destino});
@@ -17,6 +19,7 @@ class DestinoDetalhesPage extends StatefulWidget {
   State<DestinoDetalhesPage> createState() => _DestinoDetalhesPageState();
 }
 
+//Estado da tela para interações dinâmicas
 class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
   late List<Avaliacao> _avaliacoes;
 
@@ -26,6 +29,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
     _avaliacoes = List.from(widget.destino.avaliacoes);
   }
 
+  //Função chamada quando uma nova avaliação é enviada pelo formulário
   void _adicionarAvaliacao(String nome, int estrelas, String comentario) {
     setState(() {
       _avaliacoes.add(
@@ -40,12 +44,16 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
 
   @override
   Widget build(BuildContext context) {
+    //Calcula a média de estrelas com base nas avaliações atuais
     final mediaEstrelas = calcularMediaAvaliacoes(_avaliacoes);
 
     return TelaBase(
+      //Título na AppBar
       titulo: widget.destino.nome,
+      //Corpo da tela
       corpo: ListView(
         children: [
+          //Sobreposição de widgets, imagem ao fundo + nome + média estrelas
           Stack(
             alignment: Alignment.bottomLeft,
             children: [
@@ -55,6 +63,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
                 height: 240,
                 fit: BoxFit.cover,
               ),
+              //Nome do destino e média de estrelas
               Positioned(
                 bottom: 8,
                 left: 12,
@@ -79,6 +88,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
               ),
             ],
           ),
+          //Botões de ação
           Padding(
             padding: const EdgeInsets.all(12),
             child: Row(
@@ -90,6 +100,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
               ],
             ),
           ),
+          //Descrição do destino
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             child: Text(
@@ -98,6 +109,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
               softWrap: true,
             ),
           ),
+          //Formulário para adicionar nova avaliação
           FormularioAvaliacao(onEnviar: _adicionarAvaliacao),
           const SizedBox(height: 8),
           ..._avaliacoes.reversed.map((a) => AvaliacaoWidget(
