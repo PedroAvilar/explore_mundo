@@ -11,7 +11,7 @@ import 'package:explore_mundo/widgets/botoes_destinos.dart';
 //Tela que exibe os detalhes completos de um destino
 class DestinoDetalhesPage extends StatefulWidget {
   //Destino que será exibido
-  final  Destino destino;
+  final Destino destino;
 
   const DestinoDetalhesPage({super.key, required this.destino});
 
@@ -36,8 +36,8 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
         Avaliacao(
           nome: nome,
           estrelas: estrelas,
-          comentario: comentario
-        )
+          comentario: comentario,
+        ),
       );
     });
   }
@@ -53,40 +53,32 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
       //Corpo da tela
       corpo: ListView(
         children: [
-          //Sobreposição de widgets, imagem ao fundo + nome + média estrelas
-          Stack(
-            alignment: Alignment.bottomLeft,
-            children: [
-              Image.asset(
-                widget.destino.imagem,
-                width: double.infinity,
-                height: 240,
-                fit: BoxFit.cover,
-              ),
-              //Nome do destino e média de estrelas
-              Positioned(
-                bottom: 8,
-                left: 12,
-                right: 12,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        widget.destino.nome,
-                        style: const TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          shadows: [Shadow(color: Colors.black, blurRadius: 4)],
-                        ),
-                      ),
+          //Imagem do destino
+          Image.asset(
+            widget.destino.imagem,
+            width: double.infinity,
+            height: 240,
+            fit: BoxFit.cover,
+          ),
+          //Nome do destino e média de estrelas
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: Text(
+                    widget.destino.nome,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
-                    EstrelaMedia(media: mediaEstrelas),
-                  ],
+                  ),
                 ),
-              ),
-            ],
+                EstrelaMedia(media: mediaEstrelas),
+              ],
+            ),
           ),
           //Botões de ação
           Padding(
@@ -112,10 +104,11 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
           //Formulário para adicionar nova avaliação
           FormularioAvaliacao(onEnviar: _adicionarAvaliacao),
           const SizedBox(height: 8),
+          //Exibição das avaliações
           ..._avaliacoes.reversed.map((a) => AvaliacaoWidget(
             nomeCliente: a.nome,
             estrelas: a.estrelas,
-            comentario: a.comentario
+            comentario: a.comentario,
           )),
           const SizedBox(height: 16),
         ],

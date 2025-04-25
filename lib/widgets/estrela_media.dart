@@ -10,11 +10,11 @@ class EstrelaMedia extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Icon(Icons.star, color: Colors.amber, size: 20),
+        const Icon(Icons.star, color: Colors.amber, size: 22),
         const SizedBox(width: 4),
         Text(
           media.toStringAsFixed(1),
-          style: const TextStyle(fontSize: 14),
+          style: const TextStyle(fontSize: 16),
         )
       ],
     );
