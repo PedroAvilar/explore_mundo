@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget _buildButtonColumn(Color color, IconData icon, String label, String action) {
+Widget buildButtonColumn(Color color, IconData icon, String label, String action) {
   return Column(
     mainAxisSize: MainAxisSize.min,
     children: <Widget>[

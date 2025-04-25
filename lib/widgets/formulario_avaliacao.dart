@@ -19,7 +19,7 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
   final _comentarioController = TextEditingController();
   int _estrelasSelecionadas = 5;
 
-  //Método chamado ao preesionar o botão de envio
+  //Método chamado ao pressionar o botão de envio
   void _submeterFormulario() {
     if (_formKey.currentState!.validate()) {
       widget.onEnviar(
