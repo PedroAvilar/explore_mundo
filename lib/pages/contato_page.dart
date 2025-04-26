@@ -38,7 +38,7 @@ class ContatoPage extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             //Botão para o e-mail
-            buildButtonColumn(
+            buildBotoesAcoes(
               Icons.email,
               'Enviar E-mail',
               'EMAIL',
@@ -58,7 +58,7 @@ class ContatoPage extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             //Botão de ligar
-            buildButtonColumn(
+            buildBotoesAcoes(
               Icons.phone,
               'Ligar',
               'LIGAR',
@@ -78,7 +78,7 @@ class ContatoPage extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             //Botão para o mapa
-            buildButtonColumn(
+            buildBotoesAcoes(
               Icons.map,
               'Ver no mapa',
               'ROTA',

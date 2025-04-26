@@ -6,7 +6,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //Widget de botão de ação reutilizável para destinos e contato
-Widget buildButtonColumn(
+Widget buildBotoesAcoes(
   IconData icon,
   String label,
   String action,
@@ -119,5 +119,18 @@ Widget buildButtonColumn(
         ),
       ),
     ],
+  );
+}
+
+//Widget de botão de voltar
+Widget buildBotaoVoltar(BuildContext context) {
+  return FloatingActionButton(
+    onPressed: () => Navigator.pop(context),
+    backgroundColor: Colors.blueGrey,
+    tooltip: 'Voltar',
+    elevation: 6,
+    heroTag: null,
+    shape: CircleBorder(),
+    child: const Icon(Icons.arrow_back, size: 20, color: Colors.white),
   );
 }

@@ -51,84 +51,94 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
       //Título na AppBar
       titulo: widget.destino.nome,
       //Corpo da tela
-      corpo: ListView(
+      corpo: Stack(
         children: [
-          //Imagem do destino
-          Image.asset(
-            widget.destino.imagem,
-            width: double.infinity,
-            height: 240,
-            fit: BoxFit.cover,
-          ),
-          //Nome do destino e média de estrelas
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Flexible(
-                  child: Text(
-                    widget.destino.nome,
-                    style: const TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+          ListView(
+            children: [
+              //Imagem do destino
+              Image.asset(
+                widget.destino.imagem,
+                width: double.infinity,
+                height: 240,
+                fit: BoxFit.cover,
+              ),
+              //Nome do destino e média de estrelas
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        widget.destino.nome,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
                     ),
-                  ),
+                    EstrelaMedia(media: mediaEstrelas),
+                  ],
                 ),
-                EstrelaMedia(media: mediaEstrelas),
-              ],
-            ),
+              ),
+              //Botões de ação
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    buildBotoesAcoes(
+                      Icons.call,
+                      'LIGAR',
+                      'LIGAR',
+                      context,
+                      telefone: widget.destino.telefone),
+                    buildBotoesAcoes(
+                      Icons.near_me,
+                      'ROTA',
+                      'ROTA',
+                      context,
+                      endereco: widget.destino.endereco),
+                    buildBotoesAcoes(
+                      Icons.share,
+                      'COMPARTILHAR',
+                      'COMPARTILHAR',
+                      context,
+                      nome: widget.destino.nome,
+                      telefone: widget.destino.telefone,
+                      endereco: widget.destino.endereco,
+                      mediaEstrelas: mediaEstrelas),
+                  ],
+                ),
+              ),
+              //Descrição do destino
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                child: Text(
+                  widget.destino.descricao,
+                  style: const TextStyle(fontSize: 16),
+                  softWrap: true,
+                ),
+              ),
+              //Formulário para adicionar nova avaliação
+              FormularioAvaliacao(onEnviar: _adicionarAvaliacao),
+              const SizedBox(height: 8),
+              //Exibição das avaliações
+              ..._avaliacoes.reversed.map((a) => AvaliacaoWidget(
+                nomeCliente: a.nome,
+                estrelas: a.estrelas,
+                comentario: a.comentario,
+              )),
+              const SizedBox(height: 16),
+            ],
           ),
-          //Botões de ação
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                buildButtonColumn(
-                  Icons.call,
-                  'LIGAR',
-                  'LIGAR',
-                  context,
-                  telefone: widget.destino.telefone),
-                buildButtonColumn(
-                  Icons.near_me,
-                  'ROTA',
-                  'ROTA',
-                  context,
-                  endereco: widget.destino.endereco),
-                buildButtonColumn(
-                  Icons.share,
-                  'COMPARTILHAR',
-                  'COMPARTILHAR',
-                  context,
-                  nome: widget.destino.nome,
-                  telefone: widget.destino.telefone,
-                  endereco: widget.destino.endereco,
-                  mediaEstrelas: mediaEstrelas),
-              ],
-            ),
+          //Botão de voltar
+          Positioned(
+            top: 5,
+            left: 10,
+            child: buildBotaoVoltar(context),
           ),
-          //Descrição do destino
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-            child: Text(
-              widget.destino.descricao,
-              style: const TextStyle(fontSize: 16),
-              softWrap: true,
-            ),
-          ),
-          //Formulário para adicionar nova avaliação
-          FormularioAvaliacao(onEnviar: _adicionarAvaliacao),
-          const SizedBox(height: 8),
-          //Exibição das avaliações
-          ..._avaliacoes.reversed.map((a) => AvaliacaoWidget(
-            nomeCliente: a.nome,
-            estrelas: a.estrelas,
-            comentario: a.comentario,
-          )),
-          const SizedBox(height: 16),
         ],
       ),
     );
