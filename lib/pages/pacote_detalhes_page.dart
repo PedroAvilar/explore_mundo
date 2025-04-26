@@ -6,6 +6,7 @@ import 'package:explore_mundo/widgets/tela_base.dart';
 import 'package:explore_mundo/utils/media_avaliacoes.dart';
 import 'package:explore_mundo/widgets/avaliacao_widget.dart';
 import 'package:explore_mundo/widgets/formulario_avaliacao.dart';
+import 'package:explore_mundo/widgets/formulario_reserva.dart';
 
 //Tela que exibe os detalhes completos de um pacote
 class PacoteDetalhesPage extends StatefulWidget{
@@ -92,18 +93,14 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
                 //Botão de reserva
                 SizedBox(
                   width: double.infinity,
+                  height: 60,
                   child: ElevatedButton.icon(
                     icon: const Icon(Icons.calendar_today),
                     label: const Text('Reservar agora'),
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Reserva realizada com sucesso!'),
-                        ),
-                      );
-                    },
+                    onPressed: () => mostrarFormularioReserva(context),
                   ),
                 ),
+                
                 //Formulário para adicionar nova avaliação
                 FormularioAvaliacao(onEnviar: _adicionarAvaliacao),
                 const SizedBox(height: 8),
