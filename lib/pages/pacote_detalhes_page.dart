@@ -91,13 +91,34 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
                   style: const TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 16),
+                //Destinos do pacote
+                Text(
+                  'Destinos incluídos:',
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                ),
+                //Lista de destinos
+                ...widget.pacote.destinos.map((destino) => Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.location_on, size: 20, color: Colors.blueAccent),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          destino,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+                const SizedBox(height: 16),
                 //Descrição do pacote
                 Text(
                   widget.pacote.descricao,
                   style: const TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 24),
-
                 //Botão de reserva
                 SizedBox(
                   width: double.infinity,
