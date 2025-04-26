@@ -66,7 +66,7 @@ class _DestinosPageState extends State<DestinosPage> {
           : SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                final destino = destinos[index];
+                final destino = destinosFiltrados[index];
                 final mediaEstrelas = calcularMediaAvaliacoes(destino.avaliacoes);
 
                 //Cartão visual para cada destino

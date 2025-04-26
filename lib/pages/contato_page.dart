@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:explore_mundo/widgets/tela_base.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:explore_mundo/widgets/botoes_acoes.dart';
 
 //Tela com informações de contato da Explore Mundo
