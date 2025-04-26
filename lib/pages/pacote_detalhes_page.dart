@@ -66,21 +66,29 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Nome
-                Text(
-                  widget.pacote.nome,
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      //Nome do pacote
+                      child: Text(
+                        widget.pacote.nome,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,                        
+                        ),
+                      ),
+                    ),
+                    //Média das avaliações
+                    EstrelaMedia(media: mediaEstrelas),                      const SizedBox(height: 8),
+                  ]
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 16),
                 //Dias e valor do pacote
                 Text(
                   '${widget.pacote.duracaoDias} dias • R\$ ${widget.pacote.preco.toStringAsFixed(2)}',
                   style: const TextStyle(fontSize: 16),
-                ),
-                const SizedBox(height: 8),
-                //Média das avaliações
-                Row(
-                  children: [EstrelaMedia(media: mediaEstrelas)],
                 ),
                 const SizedBox(height: 16),
                 //Descrição do pacote
