@@ -6,7 +6,7 @@ final List<PacoteViagem> listaPacotes = [
     id: 'pacote1',
     nome: 'Aventura nos Alpes',
     descricao: 'Explore trilhas incríveis, lagos cristalinos os Alpes suíços.',
-    destinos: ['Oeschinen Lake, Kandersteg, Suíça'],
+    destinos: ['Oeschinen Lake'],
     preco: 2499.99,
     duracaoDias: 5,
     imagem: 'assets/imagens_lugares/oeschinen-lake.jpg',

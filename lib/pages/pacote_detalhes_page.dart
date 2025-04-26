@@ -7,6 +7,8 @@ import 'package:explore_mundo/utils/media_avaliacoes.dart';
 import 'package:explore_mundo/widgets/avaliacao_widget.dart';
 import 'package:explore_mundo/widgets/formulario_avaliacao.dart';
 import 'package:explore_mundo/widgets/formulario_reserva.dart';
+import 'package:explore_mundo/model/dados_destinos.dart';
+import 'package:explore_mundo/pages/destino_detalhes_page.dart';
 
 //Tela que exibe os detalhes completos de um pacote
 class PacoteDetalhesPage extends StatefulWidget{
@@ -97,19 +99,38 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
                   style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 //Lista de destinos
-                ...widget.pacote.destinos.map((destino) => Padding(
+                ...widget.pacote.destinos.map((nomeDestino) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.location_on, size: 20, color: Colors.blueAccent),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          destino,
-                          style: const TextStyle(fontSize: 16),
+                  child: InkWell(
+                    onTap: () {
+                      //Buscar o destino pelo nome
+                      final destinoEncontrado = destinos.firstWhere(
+                        (destino) => destino.nome == nomeDestino,
+                        orElse: () => throw Exception('Destino não encontrado'),
+                      );
+                      //Navegar para a página de detalhes do destino
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DestinoDetalhesPage(destino: destinoEncontrado),
                         ),
-                      ),
-                    ],
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        const Icon(Icons.location_on, size: 20, color: Colors.blueAccent),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            nomeDestino,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.blueAccent,
+                              ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 )),
                 const SizedBox(height: 16),
