@@ -6,7 +6,7 @@ import 'package:explore_mundo/widgets/estrela_media.dart';
 import 'package:explore_mundo/widgets/formulario_avaliacao.dart';
 import 'package:explore_mundo/widgets/tela_base.dart';
 import 'package:flutter/material.dart';
-import 'package:explore_mundo/widgets/botoes_destinos.dart';
+import 'package:explore_mundo/widgets/botoes_acoes.dart';
 
 //Tela que exibe os detalhes completos de um destino
 class DestinoDetalhesPage extends StatefulWidget {
@@ -87,21 +87,18 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 buildButtonColumn(
-                  Colors.blue,
                   Icons.call,
                   'LIGAR',
                   'LIGAR',
                   context,
                   telefone: widget.destino.telefone),
                 buildButtonColumn(
-                  Colors.blue,
                   Icons.near_me,
                   'ROTA',
                   'ROTA',
                   context,
                   endereco: widget.destino.endereco),
                 buildButtonColumn(
-                  Colors.blue,
                   Icons.share,
                   'COMPARTILHAR',
                   'COMPARTILHAR',
