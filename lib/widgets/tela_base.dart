@@ -19,6 +19,7 @@ class TelaBase extends StatelessWidget {
       //Barra superior com título dinâmico
       appBar: AppBar(
         title: Text(titulo),
+        backgroundColor: Colors.lightBlueAccent,
       ),
       //Menu lateral reutilizável
       drawer: MenuNavegacao(
@@ -29,7 +30,12 @@ class TelaBase extends StatelessWidget {
         },
       ),
       //Corpo da tela
-      body: SafeArea(child: corpo),
+      body: SafeArea(
+        child: Container(
+          color: const Color.fromARGB(255, 210, 240, 255),
+          child: corpo,
+        )
+      ),
     );
   }
 }

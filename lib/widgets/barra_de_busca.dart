@@ -9,7 +9,7 @@ class BarraDeBuscaFixa extends SliverPersistentHeaderDelegate {
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
+      color: const Color.fromARGB(255, 140, 220, 255),
       padding: const EdgeInsets.all(12),
       alignment: Alignment.center,
       child: TextField(
