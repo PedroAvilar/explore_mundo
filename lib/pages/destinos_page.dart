@@ -126,6 +126,9 @@ class _DestinosPageState extends State<DestinosPage> {
               childCount: destinosFiltrados.length,
             ),
           ),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 24),
+          ),
         ],
       ),
     );

@@ -130,6 +130,9 @@ class _PacotesPageState extends State<PacotesPage> {
               childCount: pacotesFiltrados.length,
             ),
           ),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 24),
+          ),
         ],
       ),
     );
