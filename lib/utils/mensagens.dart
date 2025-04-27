@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
 //Classse auxiliar para exibir mensagens ao usuário
 class Mensagens {
 
   //Sucesso
-  static void sucesso(BuildContext context, String mensagem) {
+  static void sucesso(String mensagem) {
     _mostrarSnackBar(
-      context,
       mensagem,
       Colors.greenAccent,
       Icons.check_circle_outline,
@@ -15,9 +16,8 @@ class Mensagens {
   }
 
   //Erro
-  static void erro(BuildContext context, String mensagem) {
+  static void erro(String mensagem) {
     _mostrarSnackBar(
-      context,
       mensagem,
       Colors.redAccent,
       Icons.error_outline,
@@ -26,9 +26,8 @@ class Mensagens {
   }
 
   //Aviso
-  static void aviso(BuildContext context, String mensagem) {
+  static void aviso(String mensagem) {
     _mostrarSnackBar(
-      context,
       mensagem,
       Colors.amberAccent,
       Icons.warning_amber_outlined,
@@ -38,7 +37,6 @@ class Mensagens {
 
   //Função interna para exibir o SnackBar
   static void _mostrarSnackBar(
-    BuildContext context,
     String mensagem,
     Color corFundo,
     IconData icone,
@@ -46,9 +44,9 @@ class Mensagens {
   ) {
 
     //Proteção contra uso de context inválido
-    if (!context.mounted) return;
+    if (!scaffoldMessengerKey.currentState!.mounted) return;
 
-    ScaffoldMessenger.of(context).showSnackBar(
+    scaffoldMessengerKey.currentState!.showSnackBar(
       SnackBar(
         backgroundColor: corFundo,
         duration: const Duration(seconds: 4),

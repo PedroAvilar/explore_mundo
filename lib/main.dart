@@ -2,6 +2,7 @@ import 'package:explore_mundo/pages/contato_page.dart';
 import 'package:explore_mundo/pages/destinos_page.dart';
 import 'package:explore_mundo/pages/pacotes_page.dart';
 import 'package:explore_mundo/pages/sobre_page.dart';
+import 'package:explore_mundo/utils/mensagens.dart';
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scaffoldMessengerKey: scaffoldMessengerKey,
       title: 'Explore Mundo',
       theme: ThemeData(
         primarySwatch: Colors.teal,

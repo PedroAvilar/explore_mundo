@@ -110,7 +110,7 @@ void mostrarFormularioReserva(BuildContext context) {
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           Navigator.pop(context);
-                          Mensagens.sucesso(context, 'Reserva realizada com sucesso!');
+                          Mensagens.sucesso('Reserva realizada com sucesso!');
                         }
                       },
                     ),

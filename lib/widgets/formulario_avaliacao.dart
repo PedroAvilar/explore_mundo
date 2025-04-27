@@ -33,9 +33,9 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
       setState(() => _estrelasSelecionadas = 5);
 
       //Exibe mensagem
-      Mensagens.sucesso(context, 'Avaliação enviada com sucesso');
+      Mensagens.sucesso('Avaliação enviada com sucesso');
     } else {
-      Mensagens.aviso(context, 'Por favor, preencha os campos.');
+      Mensagens.aviso('Por favor, preencha os campos.');
     }
   }
 

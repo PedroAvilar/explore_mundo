@@ -52,7 +52,7 @@ Widget buildBotoesAcoes(
                   if (await canLaunchUrl(uri)) {
                     await launchUrl(uri);
                   } else {
-                    Mensagens.erro(context, 'Não foi possível abrir o discador');
+                    Mensagens.erro('Não foi possível abrir o discador');
                   }
                 }
 
@@ -60,7 +60,7 @@ Widget buildBotoesAcoes(
               } else if (action == 'ROTA') {
                 //Caso não tenha rota
                 if(endereco ==null || endereco.isEmpty) {
-                  Mensagens.erro(context, 'Localização não disponível');
+                  Mensagens.erro('Localização não disponível');
                   return;
                 }
                 //Função auxiliar
@@ -81,7 +81,7 @@ Widget buildBotoesAcoes(
                 if (kIsWeb) {
                   //No navegador
                   await Clipboard.setData(ClipboardData(text: info));
-                  Mensagens.sucesso(context, 'Informações copiadas para a área de transferência.');
+                  Mensagens.sucesso('Informações copiadas para a área de transferência.');
                 } else {
                   //Em dispositivos móveis
                   await Share.share(info);
@@ -97,7 +97,7 @@ Widget buildBotoesAcoes(
                 if (await canLaunchUrl(url)) {
                   await launchUrl(url);
                 } else {
-                  Mensagens.erro(context, 'Não foi possível abrir o aplicativo de e-mail.');
+                  Mensagens.erro('Não foi possível abrir o aplicativo de e-mail.');
                 }
               }
             },
