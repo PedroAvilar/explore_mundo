@@ -29,7 +29,7 @@ class TelaBase extends StatelessWidget {
         },
       ),
       //Corpo da tela
-      body: corpo,
+      body: SafeArea(child: corpo),
     );
   }
 }

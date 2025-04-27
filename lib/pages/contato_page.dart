@@ -16,7 +16,7 @@ class ContatoPage extends StatelessWidget {
       //Título na AppBar
       titulo: 'Contato',
       //Corpo da tela
-      corpo: Padding(
+      corpo: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
