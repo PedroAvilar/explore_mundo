@@ -8,7 +8,7 @@ class PacoteViagem{
   final List<String> destinos;
   final String preco;
   final int duracaoDias;
-  final String imagem;
+  final List<String> imagem;
   final List<Avaliacao> avaliacoes;
 
   PacoteViagem({

@@ -6,7 +6,12 @@ final List<Destino> destinos = [
 
   Destino(
     nome: 'Oeschinen Lake',
-    imagem: 'assets/imagens_lugares/oeschinen-lake.jpg',
+    imagem: [
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake.jpg',
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake-1.jpg',
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake-2.jpg',
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake-3.jpg'
+    ],
     descricao: '''
       Oeschinen Lake, é um verdadeiro paraíso natural que merece estar no topo da sua lista de viagens.
       Com águas azul-turquesa cercadas por montanhas imponentes, este lago oferece um cenário de tirar o fôlego em qualquer estação do ano. No verão, o clima ameno convida para atividades como trilhas panorâmicas, passeios de barco e até mesmo um mergulho refrescante. Já no inverno, a paisagem se transforma em um espetáculo de neve, perfeito para caminhadas e pesca no gelo.
@@ -31,7 +36,12 @@ final List<Destino> destinos = [
 
   Destino(
     nome: 'Lauterbrunnen',
-    imagem: 'assets/imagens_lugares/lauterbrunnen.jpg',
+    imagem: [
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen.jpg',
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen-1.jpg',
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen-2.jpg',
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen-3.jpg'
+    ],
     descricao: '''
       Lauterbrunnen é um destino que parece saído de um conto de fadas.
       Localizado em um vale cercado por penhascos imponentes, este vilarejo suíço encanta com suas 72 cachoeiras, montanhas majestosas e atmosfera ranquila.
@@ -59,7 +69,12 @@ final List<Destino> destinos = [
 
   Destino(
     nome: 'Zermatt',
-    imagem: 'assets/imagens_lugares/zermatt.jpg',
+    imagem: [
+      'assets/imagens_lugares/Zermatt/zermatt.jpg',
+      'assets/imagens_lugares/Zermatt/zermatt-1.jpg',
+      'assets/imagens_lugares/Zermatt/zermatt-2.jpg',
+      'assets/imagens_lugares/Zermatt/zermatt-3.jpg'
+    ],
     descricao: '''
       Zermatt é uma vila encantadora nos Alpes Suíços, reconhecida por sua proximidade ao icônico Matterhorn, uma das montanhas mais famosas do mundo.
       Além das vistas deslumbrantes, Zermatt é conhecida por ser uma cidade livre de carros, o que proporciona um ambiente tranquilo para explorar a pé ou usando transportes elétricos.

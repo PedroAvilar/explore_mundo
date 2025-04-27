@@ -24,7 +24,12 @@ final List<PacoteViagem> listaPacotes = [
     destinos: ['Oeschinen Lake'],
     preco: '5.599,90',
     duracaoDias: 5,
-    imagem: 'assets/imagens_lugares/oeschinen-lake.jpg',
+    imagem: [
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake.jpg',
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake-1.jpg',
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake-2.jpg',
+      'assets/imagens_lugares/Oeschinen/oeschinen-lake-3.jpg'
+    ],
     avaliacoes: [
       Avaliacao(
         nome: 'Will Avilar',
@@ -59,7 +64,12 @@ final List<PacoteViagem> listaPacotes = [
     destinos: ['Lauterbrunnen'],
     preco: '5.999,90',
     duracaoDias: 7,
-    imagem: 'assets/imagens_lugares/lauterbrunnen.jpg',
+    imagem: [
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen.jpg',
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen-1.jpg',
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen-2.jpg',
+      'assets/imagens_lugares/Lauterbrunnen/lauterbrunnen-3.jpg'
+    ],
     avaliacoes: [
       Avaliacao(
         nome: 'Laisa Araújo',
@@ -95,7 +105,12 @@ final List<PacoteViagem> listaPacotes = [
     destinos: ['Zermatt'],
     preco: '6.599,90',
     duracaoDias: 10,
-    imagem: 'assets/imagens_lugares/zermatt.jpg',
+    imagem: [
+      'assets/imagens_lugares/Zermatt/zermatt.jpg',
+      'assets/imagens_lugares/Zermatt/zermatt-1.jpg',
+      'assets/imagens_lugares/Zermatt/zermatt-2.jpg',
+      'assets/imagens_lugares/Zermatt/zermatt-3.jpg'
+    ],
     avaliacoes: [
       Avaliacao(
         nome: 'Toddy Bear',

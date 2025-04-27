@@ -3,7 +3,7 @@ import 'avaliacao.dart';
 //Modelo de destino
 class Destino {
   final String nome;
-  final String imagem;
+  final List<String> imagem;
   final String descricao;
   final String telefone;
   final String endereco;
