@@ -10,6 +10,7 @@ final List<PacoteViagem> listaPacotes = [
       Desfrute de cinco dias de pura magia em um dos cenários naturais mais deslumbrantes do mundo: o magnífico Oeschinen Lake.
 
       ✅ Está incluído no pacote:
+      ✈️ Passagem de ida e volta.
       🏨 Hospedagem: 4 noites em um charmoso hotel alpino, com café da manhã incluso, para que você comece seus dias com energia.
       🚠 Transporte: Transfer do aeroporto e acesso ao lago por teleférico, garantindo uma experiência prática e confortável.
       🌿 Passeios e atrações:
@@ -44,6 +45,7 @@ final List<PacoteViagem> listaPacotes = [
       Explore um dos lugares mais mágicos da Suíça, vivenciando um conto de fadas com a perfeita combinação de aventura, tranquilidade e paisagens de tirar o fôlego.
 
       ✅ Está incluído no pacote:
+      ✈️ Passagem de ida e volta.
       🏨 Hospedagem: 6 noites em um charmoso hotel alpino, com café da manhã incluso, proporcionando conforto e sabor pela manhã.
       🚆 Transporte: Transfer do aeroporto e acesso facilitado a Lauterbrunnen por trem ou carro, garantindo uma viagem tranquila.
       🌿 Passeios e atrações:
@@ -79,6 +81,7 @@ final List<PacoteViagem> listaPacotes = [
       Conheça a cidade livre de carros, oferecendo um ambiente tranquilo e ideal para explorar a pé ou utilizando transportes elétricos.
 
       ✅ Está incluído no pacote:
+      ✈️ Passagem de ida e volta.
       🏨 Hospedagem: 10 noites em acomodações aconchegantes e bem localizadas, com café da manhã incluso.
       🚆 Transporte: Transfers do aeroporto e transporte local para facilitar seus deslocamentos em Zermatt.
       🌿 Passeios e atrações:
