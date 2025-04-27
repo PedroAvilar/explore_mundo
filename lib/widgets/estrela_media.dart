@@ -9,6 +9,7 @@ class EstrelaMedia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         const Icon(Icons.star, color: Colors.amber, size: 22),
         const SizedBox(width: 4),

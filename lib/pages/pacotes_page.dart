@@ -101,24 +101,31 @@ class _PacotesPageState extends State<PacotesPage> {
                         ),
                         //Informações do pacote
                         ListTile(
-                          //Nome
-                          title: Text(
-                            pacote.nome,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600
-                            ),
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Flexible(
+                                //Nome do pacote
+                                child: Text(
+                                  pacote.nome,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              //Média das avaliações
+                              EstrelaMedia(media: mediaEstrelas),
+                            ],
                           ),
                           //Preço e dias do pacote
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text('${pacote.duracaoDias} dias • R\$ ${pacote.preco}'),
-                              const SizedBox(height: 4,),
-                              // Média das avaliações
-                              Row(
-                                children: [EstrelaMedia(media: mediaEstrelas)],
-                              )
+                              const SizedBox(height: 4),
                             ],
                           ),
                         ),
