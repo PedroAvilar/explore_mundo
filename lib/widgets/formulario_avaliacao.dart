@@ -97,9 +97,25 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
               ),
               const SizedBox(height: 12),
               //Botão de envio do formulário
-              ElevatedButton(
+              ElevatedButton.icon(
+                icon: const Icon(Icons.rate_review, size: 20),
+                label: const Text(
+                  'Enviar avaliação',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightBlueAccent,
+                  foregroundColor: Colors.white,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
                 onPressed: _submeterFormulario,
-                child: const Text('Enviar avaliação'))
+              ),
             ],
           ),
         ),

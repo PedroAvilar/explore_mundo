@@ -142,17 +142,35 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
                       widget.pacote.descricao,
                       style: const TextStyle(fontSize: 16),
                     ),
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 20),
+
                     //Botão de reserva
-                    SizedBox(
-                      width: double.infinity,
-                      height: 60,
-                      child: ElevatedButton.icon(
-                        icon: const Icon(Icons.calendar_today),
-                        label: const Text('Reservar agora'),
-                        onPressed: () => mostrarFormularioReserva(context),
+                    Center(
+                      child: SizedBox(
+                        width: 250,
+                        height: 60,
+                        child: ElevatedButton.icon(
+                          icon: const Icon(Icons.calendar_today, size: 20),
+                          label: const Text(
+                            'Reservar agora',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.deepPurpleAccent,
+                            foregroundColor: Colors.white,
+                            elevation: 6,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                          ),
+                          onPressed: () => mostrarFormularioReserva(context),
+                        ),
                       ),
                     ),
+                    const SizedBox(height: 25),
                     
                     //Formulário para adicionar nova avaliação
                     FormularioAvaliacao(onEnviar: _adicionarAvaliacao),

@@ -85,18 +85,37 @@ void mostrarFormularioReserva(BuildContext context) {
                 ),
                 const SizedBox(height: 16),
                 //Botão de confirmar
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.check),
-                  label: const Text('Confirmar reserva'),
-                  onPressed: () {
-                    if (formKey.currentState!.validate()) {
-                      Navigator.pop(context);
-                      //Mensagem de sucesso
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Reserva realizada com sucesso!')),
-                      );
-                    }
-                  },
+                Center(
+                  child: SizedBox(
+                    width: 250,
+                    height: 50,
+                    child: ElevatedButton.icon(
+                      icon: const Icon(Icons.check, size: 22),
+                      label: const Text(
+                        'Confirmar reserva',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurpleAccent,
+                        foregroundColor: Colors.white,
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
+                          Navigator.pop(context);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Reserva realizada com sucesso!')),
+                          );
+                        }
+                      },
+                    ),
+                  ),
                 ),
               ],
             ),
