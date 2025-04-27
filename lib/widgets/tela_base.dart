@@ -32,7 +32,8 @@ class TelaBase extends StatelessWidget {
       //Corpo da tela
       body: SafeArea(
         child: Container(
-          color: const Color.fromARGB(255, 210, 240, 255),
+          width: double.infinity,
+          color: const Color.fromARGB(255, 230, 247, 255),
           child: corpo,
         )
       ),

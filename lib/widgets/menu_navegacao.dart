@@ -14,7 +14,7 @@ class MenuNavegacao extends StatelessWidget {
     //Menu lateral deslizante com uma lista de opções
     return Drawer(
       child: Container(
-        color: const Color.fromARGB(255, 210, 240, 255),
+        color: const Color.fromARGB(255, 230, 247, 255),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [

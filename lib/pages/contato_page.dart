@@ -17,75 +17,82 @@ class ContatoPage extends StatelessWidget {
       titulo: 'Contato',
       //Corpo da tela
       corpo: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Entre em contato conosco',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 50),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height - kToolbarHeight,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Entre em contato conosco',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(height: 50),
 
-            //E-mail
-            const Text(
-              'E-mail:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              email,
-              style: TextStyle(fontSize: 16),
-            ),
-            //Botão para o e-mail
-            buildBotoesAcoes(
-              Icons.email,
-              'Enviar E-mail',
-              'EMAIL',
-              context,
-              email: email,
-            ),
-            const SizedBox(height: 50),
+                //E-mail
+                const Text(
+                  'E-mail:',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  email,
+                  style: TextStyle(fontSize: 16),
+                ),
+                //Botão para o e-mail
+                buildBotoesAcoes(
+                  Icons.email,
+                  'Enviar E-mail',
+                  'EMAIL',
+                  context,
+                  email: email,
+                ),
+                const SizedBox(height: 50),
 
-            //Telefone
-            const Text(
-              'Telefone:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              telefone,
-              style: TextStyle(fontSize: 16),
-            ),
-            //Botão de ligar
-            buildBotoesAcoes(
-              Icons.phone,
-              'Ligar',
-              'LIGAR',
-              context,
-              telefone: telefone,
-            ),
-            const SizedBox(height: 50),
+                //Telefone
+                const Text(
+                  'Telefone:',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  telefone,
+                  style: TextStyle(fontSize: 16),
+                ),
+                //Botão de ligar
+                buildBotoesAcoes(
+                  Icons.phone,
+                  'Ligar',
+                  'LIGAR',
+                  context,
+                  telefone: telefone,
+                ),
+                const SizedBox(height: 50),
 
-            //Endereço
-            const Text(
-              'Endereço:',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                //Endereço
+                const Text(
+                  'Endereço:',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  endereco,
+                  style: TextStyle(fontSize: 16),
+                ),
+                //Botão para o mapa
+                buildBotoesAcoes(
+                  Icons.map,
+                  'Ver no mapa',
+                  'ROTA',
+                  context,
+                  endereco: endereco,
+                ),
+                const SizedBox(height: 24),
+              ],
             ),
-            Text(
-              endereco,
-              style: TextStyle(fontSize: 16),
-            ),
-            //Botão para o mapa
-            buildBotoesAcoes(
-              Icons.map,
-              'Ver no mapa',
-              'ROTA',
-              context,
-              endereco: endereco,
-            ),
-            const SizedBox(height: 24),
-          ],
+          ),
         ),
-      )
+      ),
     );
   }
 }
