@@ -25,7 +25,7 @@ Widget buildBotoesAcoes(
         height: 40,
           child: IconButton(
             iconSize: 30,
-            icon: Icon(icon, color: Colors.blue),
+            icon: Icon(icon, color: Colors.blueAccent),
             onPressed: () async {
 
               //Ação de ligar
@@ -114,7 +114,7 @@ Widget buildBotoesAcoes(
         Text(
           label,
           style: TextStyle(
-            color: Colors.blue,
+            color: Colors.blueAccent,
             fontWeight: FontWeight.w500
         ),
       ),
