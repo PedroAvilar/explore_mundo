@@ -19,13 +19,13 @@ class ContatoPage extends StatelessWidget {
       corpo: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              'Entre em contato conosco!',
+              'Entre em contato conosco',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 50),
 
             //E-mail
             const Text(
@@ -36,7 +36,6 @@ class ContatoPage extends StatelessWidget {
               email,
               style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 8),
             //Botão para o e-mail
             buildBotoesAcoes(
               Icons.email,
@@ -45,7 +44,7 @@ class ContatoPage extends StatelessWidget {
               context,
               email: email,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
 
             //Telefone
             const Text(
@@ -56,7 +55,6 @@ class ContatoPage extends StatelessWidget {
               telefone,
               style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 8),
             //Botão de ligar
             buildBotoesAcoes(
               Icons.phone,
@@ -65,7 +63,7 @@ class ContatoPage extends StatelessWidget {
               context,
               telefone: telefone,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 50),
 
             //Endereço
             const Text(
@@ -76,7 +74,6 @@ class ContatoPage extends StatelessWidget {
               endereco,
               style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 8),
             //Botão para o mapa
             buildBotoesAcoes(
               Icons.map,
@@ -85,7 +82,7 @@ class ContatoPage extends StatelessWidget {
               context,
               endereco: endereco,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 24),
           ],
         ),
       )
