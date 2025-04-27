@@ -113,7 +113,7 @@ class _PacotesPageState extends State<PacotesPage> {
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('${pacote.duracaoDias} dias • R\$ ${pacote.preco.toStringAsFixed(2)}'),
+                              Text('${pacote.duracaoDias} dias • R\$ ${pacote.preco}'),
                               const SizedBox(height: 4,),
                               // Média das avaliações
                               Row(

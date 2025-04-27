@@ -6,7 +6,7 @@ class PacoteViagem{
   final String nome;
   final String descricao;
   final List<String> destinos;
-  final double preco;
+  final String preco;
   final int duracaoDias;
   final String imagem;
   final List<Avaliacao> avaliacoes;

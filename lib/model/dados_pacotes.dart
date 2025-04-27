@@ -21,7 +21,7 @@ final List<PacoteViagem> listaPacotes = [
       Garanta já a sua vaga e venha viver momentos inesquecíveis! ✨
     ''',
     destinos: ['Oeschinen Lake'],
-    preco: 2499.99,
+    preco: '5.599,90',
     duracaoDias: 5,
     imagem: 'assets/imagens_lugares/oeschinen-lake.jpg',
     avaliacoes: [
@@ -55,7 +55,7 @@ final List<PacoteViagem> listaPacotes = [
       Garanta já a sua vaga e venha viver momentos inesquecíveis! ✨
     ''',
     destinos: ['Lauterbrunnen'],
-    preco: 2899.00,
+    preco: '5.999,90',
     duracaoDias: 7,
     imagem: 'assets/imagens_lugares/lauterbrunnen.jpg',
     avaliacoes: [
@@ -90,7 +90,7 @@ final List<PacoteViagem> listaPacotes = [
       Garanta já a sua vaga e venha viver momentos inesquecíveis! ✨
     ''',
     destinos: ['Zermatt'],
-    preco: 4990.00,
+    preco: '6.599,90',
     duracaoDias: 10,
     imagem: 'assets/imagens_lugares/zermatt.jpg',
     avaliacoes: [

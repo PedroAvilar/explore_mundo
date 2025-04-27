@@ -92,7 +92,7 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
                     const SizedBox(height: 16),
                     //Dias e valor do pacote
                     Text(
-                      '${widget.pacote.duracaoDias} dias • R\$ ${widget.pacote.preco.toStringAsFixed(2)}',
+                      '${widget.pacote.duracaoDias} dias • R\$ ${widget.pacote.preco}',
                       style: const TextStyle(fontSize: 16),
                     ),
                     const SizedBox(height: 16),
