@@ -1,3 +1,4 @@
+import 'package:explore_mundo/utils/mensagens.dart';
 import 'package:flutter/material.dart';
 
 //Widget para formulário de reserva
@@ -109,9 +110,7 @@ void mostrarFormularioReserva(BuildContext context) {
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           Navigator.pop(context);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Reserva realizada com sucesso!')),
-                          );
+                          Mensagens.sucesso(context, 'Reserva realizada com sucesso!');
                         }
                       },
                     ),

@@ -1,3 +1,4 @@
+import 'package:explore_mundo/utils/mensagens.dart';
 import 'package:flutter/material.dart';
 
 //Widget com formulário para envio de avaliação
@@ -31,21 +32,10 @@ class _FormularioAvaliacaoState extends State<FormularioAvaliacao> {
       _comentarioController.clear();
       setState(() => _estrelasSelecionadas = 5);
 
-      //Exibe mensagem de sucesso ao enviar
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-            'Avaliação enviada com sucesso!',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.black
-            ),
-          ),
-          duration: Duration(seconds: 5),
-          backgroundColor: Colors.lightGreen,
-        ),
-      );
+      //Exibe mensagem
+      Mensagens.sucesso(context, 'Avaliação enviada com sucesso');
+    } else {
+      Mensagens.aviso(context, 'Por favor, preencha os campos.');
     }
   }
 

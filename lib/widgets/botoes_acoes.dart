@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:explore_mundo/utils/mensagens.dart';
 
 //Widget de botão de ação reutilizável para destinos e contato
 Widget buildBotoesAcoes(
@@ -51,9 +52,7 @@ Widget buildBotoesAcoes(
                   if (await canLaunchUrl(uri)) {
                     await launchUrl(uri);
                   } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Não foi possível abrir o discador')),
-                    );
+                    Mensagens.erro(context, 'Não foi possível abrir o discador');
                   }
                 }
 
@@ -61,9 +60,7 @@ Widget buildBotoesAcoes(
               } else if (action == 'ROTA') {
                 //Caso não tenha rota
                 if(endereco ==null || endereco.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Localização não disponível')),
-                  );
+                  Mensagens.erro(context, 'Localização não disponível');
                   return;
                 }
                 //Função auxiliar
@@ -84,9 +81,7 @@ Widget buildBotoesAcoes(
                 if (kIsWeb) {
                   //No navegador
                   await Clipboard.setData(ClipboardData(text: info));
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Informações copiadas para a área de transferência.')),
-                  );
+                  Mensagens.sucesso(context, 'Informações copiadas para a área de transferência.');
                 } else {
                   //Em dispositivos móveis
                   await Share.share(info);
@@ -102,9 +97,7 @@ Widget buildBotoesAcoes(
                 if (await canLaunchUrl(url)) {
                   await launchUrl(url);
                 } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Não foi possível abrir o aplicativo de e-mail.')),
-                  );
+                  Mensagens.erro(context, 'Não foi possível abrir o aplicativo de e-mail.');
                 }
               }
             },
