@@ -13,47 +13,49 @@ class SobrePage extends StatelessWidget {
       //Corpo da tela
       corpo: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView(
-
-          children: const [
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
             Text(
-              '🌍 Explore Mundo - Agência de Viagens',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              '🌍 Explore Mundo',
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
-            SizedBox(height: 16),
+            Text(
+              'Agência de Viagens',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            SizedBox(height: 50),
             Text(
               'Missão:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Transformar seus sonhos de viagem em experiências inesquecíveis. '
-              'Combinamos tecnologia, atendimento personalizado e um cuidado especial aos '
+              '     Transformar seus sonhos de viagem em experiências inesquecíveis, '
+              'combinando tecnologia, atendimento personalizado e um cuidado especial aos '
               'detalhes para oferecer os melhores pacotes, destinos e serviços. ',
               softWrap: true,
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 18),
             Text(
               'Visão:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Ser referência em turismo digital, conectando pessoas aos lugares mais incríveis do mundo.',
+              '     Ser referência em turismo digital, conectando pessoas aos lugares mais incríveis do mundo.',
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 18),
             Text(
               'Valores:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text(
-              '''
-• Compromisso com o cliente
-• Ética e transparência
-• Qualidade nos serviços
-• Paixão por viagens
-• Inovação constante
-              ''',
+              '• Compromisso com o cliente\n'
+              '• Ética e transparência\n'
+              '• Qualidade nos serviços\n'
+              '• Paixão por viagens\n'
+              '• Inovação constante',
               style: TextStyle(fontSize: 16),
             ),
             SizedBox(height: 24),
@@ -61,6 +63,7 @@ class SobrePage extends StatelessWidget {
               'Entre em contato conosco e descubra como podemos te levar para sua próxima aventura!',
               style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
             ),
+            SizedBox(height: 24),
           ],
         ),
       )
