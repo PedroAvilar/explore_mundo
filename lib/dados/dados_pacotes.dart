@@ -1,5 +1,5 @@
-import 'pacote.dart';
-import 'avaliacao.dart';
+import '../model/pacote.dart';
+import '../model/avaliacao.dart';
 
 final List<PacoteViagem> listaPacotes = [
   PacoteViagem(

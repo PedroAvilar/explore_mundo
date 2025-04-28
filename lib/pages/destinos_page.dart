@@ -1,4 +1,4 @@
-import 'package:explore_mundo/model/dados_destinos.dart';
+import 'package:explore_mundo/dados/dados_destinos.dart';
 import 'package:explore_mundo/pages/destino_detalhes_page.dart';
 import 'package:explore_mundo/utils/media_avaliacoes.dart';
 import 'package:explore_mundo/widgets/tela_base.dart';

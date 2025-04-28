@@ -1,4 +1,4 @@
-import 'package:explore_mundo/model/dados_pacotes.dart';
+import 'package:explore_mundo/dados/dados_pacotes.dart';
 import 'package:explore_mundo/utils/media_avaliacoes.dart';
 import 'package:explore_mundo/widgets/estrela_media.dart';
 import 'package:explore_mundo/widgets/tela_base.dart';
