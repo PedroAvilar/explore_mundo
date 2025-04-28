@@ -163,11 +163,23 @@ class _GaleriaModalState extends State<GaleriaModal> {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Image.asset(
-            widget.imagens[_indiceAtual],
-            width: double.infinity,
-            height: 300,
-            fit: BoxFit.cover,
+
+          //Imagem com animação de troca
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 500),
+            transitionBuilder: (Widget child, Animation<double> animation) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            },
+            child: Image.asset(
+              widget.imagens[_indiceAtual],
+              key: ValueKey<int>(_indiceAtual),
+              width: double.infinity,
+              height: 300,
+              fit: BoxFit.cover,
+            ),
           ),
 
           //Indicador de posição da imagem na página
