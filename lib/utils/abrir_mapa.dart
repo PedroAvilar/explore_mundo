@@ -1,3 +1,4 @@
+import 'package:explore_mundo/utils/mensagens.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,8 +12,6 @@ Future<void> abrirMapa(String endereco, BuildContext context) async {
   } else if (await canLaunchUrl(uriWeb)) {
     await launchUrl(uriWeb, mode: LaunchMode.externalApplication);
   } else {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Não foi possível abrir o mapa')),
-    );
+    Mensagens.erro('Não foi possível abrir o mapa');
   }
 }
