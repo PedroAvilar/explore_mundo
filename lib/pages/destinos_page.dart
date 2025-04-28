@@ -90,7 +90,7 @@ class _DestinosPageState extends State<DestinosPage> {
                         ClipRRect(
                           borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                           child: Image.asset(
-                            destino.imagem,
+                            destino.imagem[0],
                             width: double.infinity,
                             height: 300,
                             fit: BoxFit.cover,

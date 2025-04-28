@@ -4,6 +4,7 @@ import 'package:explore_mundo/utils/media_avaliacoes.dart';
 import 'package:explore_mundo/widgets/avaliacao_widget.dart';
 import 'package:explore_mundo/widgets/estrela_media.dart';
 import 'package:explore_mundo/widgets/formulario_avaliacao.dart';
+import 'package:explore_mundo/widgets/galeria_modal.dart';
 import 'package:explore_mundo/widgets/tela_base.dart';
 import 'package:flutter/material.dart';
 import 'package:explore_mundo/widgets/botoes_acoes.dart';
@@ -56,12 +57,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
           ListView(
             children: [
               //Imagem do destino
-              Image.asset(
-                widget.destino.imagem,
-                width: double.infinity,
-                height: 240,
-                fit: BoxFit.cover,
-              ),
+              GaleriaModal(imagens: widget.destino.imagem),
               //Nome do destino e média de estrelas
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),

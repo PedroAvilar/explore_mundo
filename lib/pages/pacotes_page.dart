@@ -93,7 +93,7 @@ class _PacotesPageState extends State<PacotesPage> {
                         ClipRRect(
                           borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                           child: Image.asset(
-                            pacote.imagem,
+                            pacote.imagem[0],
                             width: double.infinity,
                             height: 300,
                             fit: BoxFit.cover,

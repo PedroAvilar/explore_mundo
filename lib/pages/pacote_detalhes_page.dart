@@ -1,4 +1,5 @@
 import 'package:explore_mundo/widgets/estrela_media.dart';
+import 'package:explore_mundo/widgets/galeria_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:explore_mundo/model/pacote.dart';
 import 'package:explore_mundo/model/avaliacao.dart';
@@ -59,12 +60,7 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
           ListView(
             children: [
               //Imagem do pacote
-              Image.asset(
-                widget.pacote.imagem,
-                width: double.infinity,
-                height: 240,
-                fit: BoxFit.cover,
-              ),
+              GaleriaModal(imagens: widget.pacote.imagem),
               //Informações do pacote
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
