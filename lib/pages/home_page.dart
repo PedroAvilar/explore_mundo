@@ -13,19 +13,27 @@ class HomePage extends StatelessWidget {
       titulo: 'Explore Mundo',
       //Corpo da tela
       corpo: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              'Bem-vindo ao Explore Mundo!',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 16),
-            Text(
-              'Acesse o menu, escolha um destino e comece sua jornada.',
-              style: TextStyle(fontSize: 16),
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                'Bem-vindo ao Explore Mundo!',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 25),
+              Text(
+                'Acesse o menu e escolha um destino.',
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 15),
+              Text(
+                'Comece sua jornada.',
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
+          ),
         ),
       ),
     );
