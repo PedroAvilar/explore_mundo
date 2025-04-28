@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'Escolha um destino e comece sua jornada.',
+              'Acesse o menu, escolha um destino e comece sua jornada.',
               style: TextStyle(fontSize: 16),
             ),
           ],
