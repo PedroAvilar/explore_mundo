@@ -186,7 +186,7 @@ class _PacoteDetalhesPageState extends State<PacoteDetalhesPage> {
           //Botão de voltar
           Positioned(
             top: 5,
-            left: 10,
+            left: 5,
             child: buildBotaoVoltar(context),
           ),
         ],

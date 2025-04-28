@@ -117,13 +117,18 @@ Widget buildBotoesAcoes(
 
 //Widget de botão de voltar
 Widget buildBotaoVoltar(BuildContext context) {
-  return FloatingActionButton(
+  return ElevatedButton.icon(
     onPressed: () => Navigator.pop(context),
-    backgroundColor: Colors.blueGrey,
-    tooltip: 'Voltar',
-    elevation: 6,
-    heroTag: null,
-    shape: CircleBorder(),
-    child: const Icon(Icons.arrow_back, size: 20, color: Colors.white),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.blueGrey,
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      elevation: 4,
+    ),
+    icon: const Icon(Icons.arrow_back_sharp, size: 20),
+    label: const Text('Voltar', style: TextStyle(fontSize: 16)),
   );
 }

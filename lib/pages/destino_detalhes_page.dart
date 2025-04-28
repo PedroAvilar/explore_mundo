@@ -132,7 +132,7 @@ class _DestinoDetalhesPageState extends State<DestinoDetalhesPage> {
           //Botão de voltar
           Positioned(
             top: 5,
-            left: 10,
+            left: 5,
             child: buildBotaoVoltar(context),
           ),
         ],
