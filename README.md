@@ -8,7 +8,7 @@
 Desenvolvido em Flutter, utilizando widgets estáticos e dinâmicos, navigator e componentes reutilizáveis.
 
 
-Para mais informações e visualizar capturas de telas da aplicação em funcionamento explore o arquivo PDF "Nível 2 - Relatório da MIssão Prática".
+Para mais informações e visualizar capturas de telas da aplicação em funcionamento explore o arquivo PDF "Nível 2 - Relatório da Missão Prática".
 
 
 # explore_mundo
