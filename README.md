@@ -1,3 +1,16 @@
+# Faculdade Estácio
+## Curso Desenvolvimento Full Stack
+## Mundo 4 - Nível 2
+## Pedro Wilson Araújo Avilar
+## Matrícula 2023 0916 8251
+
+### Aplicativo para listagem de destinos turísticos e venda de pacotes de viagem
+Desenvolvido em Flutter, utilizando widgets estáticos e dinâmicos, navigator e componentes reutilizáveis.
+
+
+Para mais informações e visualizar capturas de telas da aplicação em funcionamento explore o arquivo PDF "Nível 2 - Relatório da MIssão Prática".
+
+
 # explore_mundo
 
 A new Flutter project.
